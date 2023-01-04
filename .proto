@@ -1,0 +1,11 @@
+service RouteGuide {
+   rpc GetFeatures(Point) returns (Feature) {}
+   rpc ListFeatures(Rectangle) returns (stream Feature) {}
+   rpc RecordRoute(stream Point) returns (RouteSummary) {}
+   rpc Routechat(stream RouteNote) returns (stream RouteNote) {}
+}
+
+message Point {
+    int32 latitude = 1;
+    int32 longitude = 1;
+}
